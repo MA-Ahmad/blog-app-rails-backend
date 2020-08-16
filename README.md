@@ -1,24 +1,68 @@
-# README
+<h3 align="center">React Blogs</h3>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<div align="center">
 
-Things you may want to cover:
+[![Linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-ahmad20/)
+[![Gmail](https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:muhammad.ahmad8043@gmail.com)
+</div>
+<p align="center">This app shows you how to create a CRUD app with react on front-end, ROR on back-end and for styling ChakraUI.</p>
 
-* Ruby version
+![Home Page](app/assets/images/home_page.png) 
 
-* System dependencies
+## What this App does?
 
-* Configuration
+- By this app, you will be able to:
 
-* Database creation
+  - Create a new Blog.
+  - Edit a Blog.
+  - Delete a Blog.
+  - Get list of all Blogs.
 
-* Database initialization
+## Built with
 
-* How to run the test suite
+- Ruby on Rails
+- Reactjs (react hooks, react router)
+- ChakraUI used for styling 
+- Formik used for validations
+- react-transition-group for animation
 
-* Services (job queues, cache servers, search engines, etc.)
+## Setup
 
-* Deployment instructions
+# Back-end Part
+- Clone the repository
+- Use `cd <repository-path>`
+- Run `bundle install`
+- Run `rails db:create`
+- Run `rails db:migrate`
+- Run `rails db:seed`
+- Run `rails s -p 3001`
+# Front-end Part
+- Clone the [react front-end repository](https://github.com/MA-Ahmad/blog-app-react-frontend)
+- Use `cd <repository-path>`
+- Run `npm install`
+- Run `npm start`
+Now check it on browser `localhost:300`
 
-* ...
+## Author
+
+Muhammad Ahmad
+
+- Github: [@Ahmad](https://github.com/MA-Ahmad)
+
+- LinkedIn: [Muhammad Ahmad](https://www.linkedin.com/in/muhammad-ahmad20/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome! Start by:
+
+- Forking the project
+- Cloning the project to your local machine
+- `cd` into the project directory
+- Run `git checkout -b your-branch-name`
+- Make your contributions
+- Push your branch up to your forked repository
+- Open a Pull Request with a detailed description to the development branch of the original project for a review
+
+## Show your support
+
+Give a ⭐️ if you like this project!
