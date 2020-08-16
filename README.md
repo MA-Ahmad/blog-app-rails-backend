@@ -1,4 +1,4 @@
-<h3 align="center">React Blogs</h3>
+<h3 align="center">Blog App Backend</h3>
 
 <div align="center">
 
@@ -6,8 +6,6 @@
 [![Gmail](https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:muhammad.ahmad8043@gmail.com)
 </div>
 <p align="center">This app shows you how to create a CRUD app with react on front-end, ROR on back-end and for styling ChakraUI.</p>
-
-![Home Page](app/assets/images/home_page.png) 
 
 ## What this App does?
 
