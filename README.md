@@ -27,18 +27,18 @@
 ## Setup
 
 * ### Back-end Part
-- Clone the repository
-- Use `cd <repository-path>`
-- Run `bundle install`
-- Run `rails db:create`
-- Run `rails db:migrate`
-- Run `rails db:seed`
-- Run `rails s -p 3001`
+    - Clone the repository
+    - Use `cd <repository-path>`
+    - Run `bundle install`
+    - Run `rails db:create`
+    - Run `rails db:migrate`
+    - Run `rails db:seed`
+    - Run `rails s -p 3001`
 * ### Front-end Part
-- Clone the [react front-end repository](https://github.com/MA-Ahmad/blog-app-react-frontend)
-- Use `cd <repository-path>`
-- Run `npm install`
-- Run `npm start`
+    - Clone the [react front-end repository](https://github.com/MA-Ahmad/blog-app-react-frontend)
+    - Use `cd <repository-path>`
+    - Run `npm install`
+    - Run `npm start`
 Now check it on browser `localhost:300`
 
 ## Author
