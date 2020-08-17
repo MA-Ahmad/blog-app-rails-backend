@@ -1,5 +1,5 @@
 <h3 align="center">Blog App</h3>
-<p align="center">This app shows you how to create a CRUD app with react on front-end, ROR on back-end and for styling ChakraUI.</p>
+<p align="center">This app shows you how to create a CRUD app with ChakraUI, react on front-end and ROR on back-end</p>
 
 ## What this App does?
 
