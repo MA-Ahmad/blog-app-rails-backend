@@ -20,7 +20,7 @@
 
 ## Setup
 
-* ### Backend Part
+* ### Back-end Part
     - Clone the repository
     - Use `cd <repository-path>`
     - Run `bundle install`
@@ -28,7 +28,7 @@
     - Run `rails db:migrate`
     - Run `rails db:seed`
     - Run `rails s -p 3001`
-* ### Frontend Part
+* ### Front-end Part
     - Clone the [react front-end repository](https://github.com/MA-Ahmad/blog-app-react-frontend)
     - Use `cd <repository-path>`
     - Run `npm install`
