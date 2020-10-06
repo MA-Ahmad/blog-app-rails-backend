@@ -26,6 +26,7 @@ blogs = [
     }
   ]
 
+  user = User.create(email: 'admin@admin.com', password: '123456', password_confirmation: '123456')
   blogs.each do |b|
-    Blog.create(title: b[:title], authorName: b[:authorName], content: b[:content])
+    Blog.create(title: b[:title], authorName: b[:authorName], content: b[:content], user_id: user.id)
   end
