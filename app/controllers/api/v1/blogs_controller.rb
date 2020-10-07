@@ -1,8 +1,10 @@
-class Api::V1::BlogsController < ApplicationController
+class Api::V1::BlogsController < ApiController
     before_action :find_blog, except: [:index, :new, :create]
+    before_action :authenticate, only: %i[create update destroy]
 
     def index
-        @blogs = Blog.all.order(created_at: :desc)
+        @blogs = Blog.includes(:user).all.order(created_at: :desc)
+        # JSON.parse(Blog.includes(:user).limit(2).order(created_at: :desc).to_json(include: [user: {only: :name}]))
         render json: @blogs
     end
 
@@ -24,7 +26,7 @@ class Api::V1::BlogsController < ApplicationController
         if @blog
             render json: @blog
         else
-            render json: @blog.errors
+            render json: errors(@blog), status: 422
         end
     end
 
@@ -36,7 +38,7 @@ class Api::V1::BlogsController < ApplicationController
         if @blog.update(blog_params)
             render json: @blog
         else
-            render json: @blog.errors
+            render json: errors(@blog), status: 422
         end
     end
 
@@ -44,7 +46,7 @@ class Api::V1::BlogsController < ApplicationController
         if @blog.destroy
             render json: { message: 'Blog deleted!' }
         else
-            render json: @blog.error
+            render json: errors(@blog), status: 422
         end
     end
 
@@ -55,6 +57,11 @@ class Api::V1::BlogsController < ApplicationController
     end
 
     def blog_params
-        params.require(:blog).permit(:title, :authorName, :content, :image)
+        params.require(:blog).permit(:title, :authorName, :content, :image, :user_id)
+    end
+
+    # Errors
+    def errors(record)
+        { errors: record.errors.messages }
     end
 end
