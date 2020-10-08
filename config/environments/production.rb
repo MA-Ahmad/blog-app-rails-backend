@@ -12,7 +12,9 @@ Rails.application.configure do
 
   routes.default_url_options[:host] = 'https://blog-backend-rails.herokuapp.com'
 
-  config.session_store :cookie_store, :key => '_blog_backend', :domain => :all
+  # config.session_store :cookie_store, :key => '_blog_backend', :domain => :all
+
+  config.session_store :cookie_store, :key => '_blog_backend' , :domain => '.blog-backend-rails.herokuapp.com'
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
