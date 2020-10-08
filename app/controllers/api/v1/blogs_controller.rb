@@ -3,8 +3,7 @@ class Api::V1::BlogsController < ApiController
     before_action :authenticate, only: %i[create update destroy]
 
     def index
-        @blogs = Blog.includes(:user).all.order(created_at: :desc)
-        # JSON.parse(Blog.includes(:user).limit(2).order(created_at: :desc).to_json(include: [user: {only: :name}]))
+        @blogs = JSON.parse(Blog.includes(:user).order(created_at: :desc).to_json(include: [user: {only: [:name, :image_url]}]))
         render json: @blogs
     end
 
@@ -22,11 +21,12 @@ class Api::V1::BlogsController < ApiController
     end
 
     def create
-        @blog = Blog.create!(blog_params)
-        if @blog
+        @blog = current_user.blogs.new(JSON.parse(params[:blog]))
+        if @blog.save
+            @blog.attach_image(params[:image]) if params[:image].present?
             render json: @blog
         else
-            render json: errors(@blog), status: 422
+            render json: { status: :error, updated: false, }, status: 422
         end
     end
 
@@ -35,10 +35,11 @@ class Api::V1::BlogsController < ApiController
     end
 
     def update
-        if @blog.update(blog_params)
+        if @blog.update(JSON.parse(params[:blog]))
+            @blog.attach_image(params[:image]) if params[:image].present?
             render json: @blog
         else
-            render json: errors(@blog), status: 422
+            render json: { status: :error, updated: false, }, status: 422
         end
     end
 
