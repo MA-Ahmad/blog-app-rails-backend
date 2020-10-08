@@ -6,3 +6,5 @@
 # Rails.application.config.session_store :cookie_store, key: "_blog_backend", domain: "localhost"
 
 # Rails.application.config.session_store :cookie_store, key: "_blog_backend", domain: "https://blog-backend-rails.herokuapp.com"
+
+config.session_store :cookie_store, :key => '_blog_backend' , :domain => '.blog-backend-rails.herokuapp.com'
