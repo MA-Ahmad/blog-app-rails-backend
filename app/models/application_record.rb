@@ -4,6 +4,6 @@ class ApplicationRecord < ActiveRecord::Base
 
   def attach_image image_file
     self.image.attach(image_file)
-    self.update(image_url: polymorphic_url(self.image))
+    self.update(image_url: url_for(self.image))
   end
 end
