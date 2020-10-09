@@ -15,10 +15,4 @@ Rails.application.routes.draw do
 
   root 'home#index'
   # get '*path', to: 'pages#index', via: :all
-  # get '*all', to: 'application#mount', constraints: lambda { |req|
-  #   req.path.exclude? 'rails/active_storage'
-  # }
-  scope format: true, constraints: { format: /jpg|png|gif|PNG/ } do
-    get '/*anything', to: proc { [404, {}, ['']] }, constraints: lambda { |request| !request.path_parameters[:anything].start_with?('rails/') }
-  end
 end
