@@ -12,7 +12,7 @@ Rails.application.configure do
 
   # routes.default_url_options[:host] = 'https://blog-backend-rails.herokuapp.com'
 
-  # config.serve_static_assets = true
+  config.serve_static_assets = true
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
@@ -24,9 +24,8 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
-  config.public_file_server.enabled = true
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # config.public_file_server.enabled = true
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
