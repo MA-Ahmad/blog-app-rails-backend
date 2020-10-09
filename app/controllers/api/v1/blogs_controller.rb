@@ -3,7 +3,7 @@ class Api::V1::BlogsController < ApiController
     before_action :authenticate, only: %i[create update destroy]
 
     def index
-        @blogs = JSON.parse(Blog.includes(:user).order(created_at: :desc).to_json(include: [user: {only: [:name, :image_url]}]))
+        @blogs = JSON.parse(Blog.includes(:user).order(created_at: :desc).to_json(include: [user: {only: [:name, :image]}]))
         render json: @blogs
     end
 
@@ -56,7 +56,7 @@ class Api::V1::BlogsController < ApiController
 
     def find_blog
         if params[:action] == 'show'
-            @blog = JSON.parse(Blog.includes(:user).find(params[:id]).to_json(include: [user: {only: [:name, :image_url]}]))
+            @blog = JSON.parse(Blog.includes(:user).find(params[:id]).to_json(include: [user: {only: [:name, :image]}]))
         else
             @blog = Blog.find(params[:id])
         end
