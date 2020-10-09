@@ -23,7 +23,7 @@ class Api::V1::BlogsController < ApiController
     def create
         @blog = current_user.blogs.new(JSON.parse(params[:blog]))
         if @blog.save
-            @blog.attach_image(params[:image]) if params[:image].present?
+            @blog.update(image: params[:image]) if params[:image].present?
             render json: @blog
         else
             render json: { status: :error, updated: false, }, status: 422
@@ -36,7 +36,8 @@ class Api::V1::BlogsController < ApiController
 
     def update
         if @blog.update(JSON.parse(params[:blog]))
-            @blog.attach_image(params[:image]) if params[:image].present?
+            @blog.update(image: params[:image]) if params[:image].present?
+            # @blog.attach_image(params[:image]) if params[:image].present?
             render json: @blog
         else
             render json: { status: :error, updated: false, }, status: 422
@@ -55,7 +56,7 @@ class Api::V1::BlogsController < ApiController
 
     def find_blog
         if params[:action] == 'show'
-            @blog = JSON.parse(Blog.includes(:user).find(params[:id]).to_json(include: [user: {only: [:name, :image_url]}]))
+            @blog = JSON.parse(Blog.includes(:user).find(params[:id]).to_json(include: [user: {only: [:name, :image]}]))
         else
             @blog = Blog.find(params[:id])
         end
