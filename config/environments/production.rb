@@ -10,7 +10,7 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  routes.default_url_options[:host] = 'https://blog-backend-rails.herokuapp.com'
+  # routes.default_url_options[:host] = 'https://blog-backend-rails.herokuapp.com'
 
   # config.session_store :cookie_store, :key => '_blog_backend', :domain => :all
   # config.session_store :cookie_store, :key => '_blog_backend' , :domain => '.blog-backend-rails.herokuapp.com'
