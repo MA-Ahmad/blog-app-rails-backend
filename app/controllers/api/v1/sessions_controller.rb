@@ -23,8 +23,7 @@ class Api::V1::SessionsController < ApiController
             }
         else
             render json: {
-                logged_in: false,
-                user: nil
+                logged_in: false
             }
         end
     end
