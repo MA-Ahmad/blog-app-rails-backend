@@ -56,7 +56,7 @@ class Api::V1::BlogsController < ApiController
 
     def find_blog
         if params[:action] == 'show'
-            @blog = JSON.parse(Blog.includes(:user).find(params[:id]).to_json(include: [user: {only: [:name, :image]}]))
+            @blog = JSON.parse(Blog.includes(:user).find(params[:id]).to_json(include: [user: {only: [:name, :image_url]}]))
         else
             @blog = Blog.find(params[:id])
         end
