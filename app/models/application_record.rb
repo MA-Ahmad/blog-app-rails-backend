@@ -3,8 +3,8 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def attach_image image_file
-    self.image.attach(image_file)
-    # self.update(image_url: url_for(self.image))
-    self.update(image_url: Rails.application.routes.url_helpers.rails_blob_path(self.image, only_path: true))
+    self.image_file.attach(image_file)
+    # self.update(image: url_for(self.image_file))
+    self.update(image: Rails.application.routes.url_helpers.rails_blob_path(self.image_file, only_path: true))
   end
 end
