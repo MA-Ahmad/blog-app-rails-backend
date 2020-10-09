@@ -15,6 +15,7 @@ Rails.application.configure do
   # config.session_store :cookie_store, :key => '_blog_backend', :domain => :all
   # config.session_store :cookie_store, :key => '_blog_backend' , :domain => '.blog-backend-rails.herokuapp.com'
 
+  config.serve_static_assets = true
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
