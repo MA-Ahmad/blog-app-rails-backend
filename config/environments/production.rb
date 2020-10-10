@@ -12,8 +12,9 @@ Rails.application.configure do
 
   # routes.default_url_options[:host] = 'https://blog-backend-rails.herokuapp.com'
   # config.root = Rails.root.join('public')
-  config.serve_static_assets = true
-
+  # config.serve_static_assets = true
+  config.serve_static_files = true
+  
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
@@ -32,6 +33,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
+  config.assets.digest = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
