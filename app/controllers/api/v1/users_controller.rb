@@ -3,8 +3,8 @@ class Api::V1::UsersController < ApiController
     
     def update
         if current_user.update(JSON.parse(params[:user]))
-            current_user.update(image: params[:image]) if params[:image].present?
-            # current_user.attach_image(params[:image]) if params[:image].present?
+            # current_user.update(image: params[:image]) if params[:image].present?
+            current_user.attach_image(params[:image]) if params[:image].present?
             render json: @current_user
         else
             render json: { status: :error, updated: false, }, status: 422

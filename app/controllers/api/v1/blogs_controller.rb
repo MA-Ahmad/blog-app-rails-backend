@@ -36,8 +36,8 @@ class Api::V1::BlogsController < ApiController
 
     def update
         if @blog.update(JSON.parse(params[:blog]))
-            @blog.update(image: params[:image]) if params[:image].present?
-            # @blog.attach_image(params[:image]) if params[:image].present?
+            # @blog.update(image: params[:image]) if params[:image].present?
+            @blog.attach_image(params[:image]) if params[:image].present?
             render json: @blog
         else
             render json: { status: :error, updated: false, }, status: 422
