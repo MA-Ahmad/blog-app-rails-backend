@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # routes.default_url_options[:host] = 'https://blog-backend-rails.herokuapp.com'
-
+  # config.root = Rails.root.join('public')
   config.serve_static_assets = true
 
   # Full error reports are disabled and caching is turned on.
