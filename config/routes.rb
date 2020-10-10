@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  if Rails.env.production?
+  get "#{Rails.root.to_s}/public/:file_path",
+        to: redirect('/%{file_path}'),
+        constraints: { file_path: %r{uploads/.*} }
+  end
   namespace :api do
     namespace :v1 do
       resources :blogs
@@ -15,4 +20,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
   # get '*path', to: 'pages#index', via: :all
+  
 end
