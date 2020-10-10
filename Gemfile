@@ -24,6 +24,7 @@ gem "jbuilder", "~> 2.7"
 # gem 'image_processing', '~> 1.2'
 
 gem 'carrierwave', '~> 2.0'
+gem "aws-sdk-s3", require: false
 gem "bcrypt"
 gem "rack-cors"
 gem "mini_magick"
