@@ -1,6 +1,7 @@
 class Api::V1::BlogsController < ApiController
     before_action :find_blog, except: [:index, :new, :create]
     before_action :authenticate, only: %i[create update destroy]
+    before_action :track_ahoy_visit, only: :index
 
     def index
         @blogs = JSON.parse(Blog.includes(:user).order(created_at: :desc).to_json(include: [user: {only: [:name, :image]}]))

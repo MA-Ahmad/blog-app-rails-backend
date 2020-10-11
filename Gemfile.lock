@@ -58,6 +58,11 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ahoy_matey (3.0.5)
+      activesupport (>= 5)
+      device_detector
+      geocoder (>= 1.4.5)
+      safely_block (>= 0.2.1)
     aws-eventstream (1.0.3)
     aws-partitions (1.273.0)
     aws-sdk-core (3.90.1)
@@ -98,8 +103,11 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    device_detector (1.0.4)
+    errbase (0.2.0)
     erubi (1.9.0)
     ffi (1.13.1)
+    geocoder (1.6.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.5)
@@ -175,6 +183,8 @@ GEM
     ruby-vips (2.0.17)
       ffi (~> 1.9)
     rubyzip (2.3.0)
+    safely_block (0.3.0)
+      errbase (>= 0.1.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -231,6 +241,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ahoy_matey
   aws-sdk-s3
   bcrypt
   bootsnap (>= 1.4.2)

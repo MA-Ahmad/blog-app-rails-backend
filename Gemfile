@@ -29,6 +29,8 @@ gem "bcrypt"
 gem "rack-cors"
 gem "mini_magick"
 
+gem 'ahoy_matey'
+
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 
