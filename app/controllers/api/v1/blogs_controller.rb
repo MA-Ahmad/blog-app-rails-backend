@@ -22,9 +22,9 @@ class Api::V1::BlogsController < ApiController
     end
 
     def create
-        @blog = current_user.blogs.new(JSON.parse(params[:blog]))
+        @blog = current_user.blogs.new(blog_params)
         if @blog.save
-            @blog.update(image: params[:image]) if params[:image].present?
+            @blog.attach_image(params[:blog][:image_file]) if params[:blog][:image_file].present?
             render json: @blog
         else
             render json: { status: :error, updated: false, }, status: 422
@@ -64,7 +64,7 @@ class Api::V1::BlogsController < ApiController
     end
 
     def blog_params
-        params.require(:blog).permit(:title, :authorName, :content, :image, :user_id)
+        params.require(:blog).permit(:title, :authorName, :content, :image_file, :user_id)
     end
 
     # Errors
