@@ -13,7 +13,7 @@ class Api::V1::UsersController < ApiController
     private
 
     def user_params
-        params.require(:user).permit(:name, :image_file)
+        params.require(:user).permit(:name, :email, :username, :location, :summary, :education, :emp_name, :emp_title, :skills, :image_file)
     end
 end
   
