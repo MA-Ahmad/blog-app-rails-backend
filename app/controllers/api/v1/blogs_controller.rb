@@ -4,7 +4,8 @@ class Api::V1::BlogsController < ApiController
     before_action :track_ahoy_visit, only: :index
 
     def index
-        @blogs = JSON.parse(Blog.includes(:user).order(created_at: :desc).to_json(include: [user: {only: [:name, :image]}]))
+        # @blogs = JSON.parse(Blog.includes(:user, :likes).order(created_at: :desc).to_json(include: [user: {only: [:name, :image]}]))
+        @blogs = JSON.parse(Blog.includes(:user, :likes, :bookmarks).order(created_at: :desc).to_json(include: {user: {except: :created_at}, likes: {except: :created_at}, bookmarks: {except: :created_at}}))
         render json: @blogs
     end
 
