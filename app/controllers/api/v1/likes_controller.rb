@@ -4,7 +4,6 @@ class Api::V1::LikesController < ApiController
         params[:like][:user_id] = current_user.id
         @like = Like.new(like_params)
         if @like.save
-        #   count = Blog.find(params[:like][:reference_id]).likes.count if params[:like][:reference_type] == 'Blog'
             set_blogs
             render json: @blogs
         elsif already_liked?
